@@ -63,66 +63,6 @@
     },
     "modules": [
         {
-            "name": "libfuse",
-  	    "buildsystem": "meson",
-            "builddir": true,
-            "cleanup": [ "/bin" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/libfuse/libfuse/archive/fuse-3.0.1.tar.gz",
-                    "sha256": "acd78e960f31df8ee2859f410953f6eed0891f810236520e8e80afbdc986e90b"
-                }
-            ]
-        },
-        {
-            "name": "libgsystem",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "git://git.gnome.org/libgsystem.git"
-                }
-            ]
-        },
-        {
-            "name": "ostree",
-            "config-opts": [ "--disable-man" ],
-            "cleanup": [ "/bin",
-                         "/etc/grub.d",
-                         "/etc/ostree",
-                         "/share/ostree",
-                         "/libexec" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/ostreedev/ostree/releases/download/v2017.6/libostree-2017.6.tar.xz",
-                    "sha256": "25ac0ca3e9cc3af115df096fc183d3efa3cf36e765586e7e3f825dc32c89545b"
-                }
-            ]
-        },
-        {
-            "name": "flatpak",
-            "config-opts": [ "--disable-documentation",
-                             "--disable-seccomp",
-                             "--disable-sandboxed-triggers",
-                             "--disable-system-helper",
-                             "--with-system-install-dir=/var/lib/flatpak" ],
-            "cleanup": [ "/etc/profile.d",
-                         "/lib/systemd",
-                         "/share/dbus-1/interfaces/org.freedesktop.*",
-                         "/share/dbus-1/services/org.freedesktop.*",
-                         "/share/gdm" ],
-            "post-install": [ "cp /usr/bin/update-mime-database /app/bin",
-                              "cp /usr/bin/update-desktop-database /app/bin" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://github.com/flatpak/flatpak/releases/download/0.9.3/flatpak-0.9.3.tar.xz",
-                    "sha256": "a842e1ee03178a5f4236c39786433f6f822d22595a9ef4525004a6c72b4b3846"
-                }
-            ]
-        },
-        {
             "name": "git",
             "sources": [
                 {
