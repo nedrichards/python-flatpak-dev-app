@@ -64,6 +64,7 @@
     "modules": [
         {
             "name": "libfuse",
+  	    "buildsystem": "meson",
             "cleanup": [ "/bin" ],
             "sources": [
                 {
@@ -132,7 +133,6 @@
         },
         {
             "name": "pip",
-            "_rm-configure": true,
             "build-options": {
                 "env": {
                     "PYTHONUSERBASE" : "/app"
@@ -162,7 +162,6 @@
         },
 {
             "name": "virtualenv",
-            "_rm-configure": true,
             "build-options": {
                 "env": {
                     "PYTHONUSERBASE" : "/app"
