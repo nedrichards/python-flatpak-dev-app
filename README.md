@@ -13,7 +13,7 @@ flatpak remote-add --from gnome https://sdk.gnome.org/gnome.flatpakrepo
 ```
   flatpak install gnome org.freedesktop.Sdk
 ```
-(3) Build thunderbird from this directory:
+(3) Build the python dev app from this directory:
 ```
 flatpak-builder --force-clean --ccache --require-changes --repo=repo app com.github.nedrichards.PythonDevApp.json
 ```
