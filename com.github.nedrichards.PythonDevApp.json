@@ -65,6 +65,7 @@
         {
             "name": "libfuse",
   	    "buildsystem": "meson",
+            "builddir": true,
             "cleanup": [ "/bin" ],
             "sources": [
                 {
