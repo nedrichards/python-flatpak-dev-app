@@ -22,10 +22,6 @@
         /* Allow communication with network */
         "--share=network",
         "--talk-name=org.gtk.vfs.*",
-        /* System notifications with libnotify */
-        "--talk-name=org.freedesktop.Notifications",
-        /* Needs access to policykit for flatpak */
-        "--system-talk-name=org.freedesktop.PolicyKit1",
         /* Needed for dconf to work (+ host or homedir read access from above) */
         "--filesystem=xdg-run/dconf",
         "--filesystem=~/.config/dconf:ro",
@@ -41,13 +37,8 @@
         "--filesystem=/etc/ca-certificates:ro",
         /* Keep system terminal mappings */
         "--filesystem=/etc/inputrc:ro",
-        /* Need access to user and system flatpak repos */
-        "--filesystem=~/.local/share/flatpak",
-        "--filesystem=/var/lib/flatpak",
         /* Chromium uses a socket in tmp for its singleton check */
         "--filesystem=/tmp",
-        /* flatpak-bundler builds things in var tmp, needs to support xattrs */
-        "--filesystem=/var/tmp"
     ],
     "cleanup": [ "/cache",
                  "/share/aclocal",
@@ -62,6 +53,23 @@
         }
     },
     "modules": [
+	{
+		"name": "ffmpeg",
+		"cleanup": [ "/include", "/lib/pkgconfig", "/share" ],
+		"config-opts": [
+                        "--enable-shared",
+                        "--disable-static",
+                        "--enable-gnutls",
+                        "--disable-doc"
+		],
+		"sources": [
+			{
+				"type": "archive",
+				"url": "https://ffmpeg.org/releases/ffmpeg-3.3.tar.xz",
+				"sha256": "599e7f7c017221c22011c4037b88bdcd1c47cd40c1e466838bc3c465f3e9569d"
+			}
+		]
+	},
         {
             "name": "pip",
  	    "buildsystem": "simple",
