@@ -65,6 +65,7 @@
         {
             "name": "pip",
  	    "buildsystem": "simple",
+	    "ensure-writable": ["/lib/python*/site-packages/easy-install.pth"],
 	    "build-commands": [
 		"python3 setup.py build",
 		"python3 setup.py install --prefix=/app"
@@ -80,6 +81,7 @@
 	{
             "name": "virtualenv",
 	    "buildsystem": "simple",
+	    "ensure-writable": ["/lib/python*/site-packages/easy-install.pth"],
 	    "build-commands": [
 		"python3 setup.py build",
 		"python3 setup.py install --prefix=/app"
@@ -95,6 +97,7 @@
 	{
             "name": "youtube-dl",
 	    "buildsystem": "simple",
+	    "ensure-writable": ["/lib/python*/site-packages/easy-install.pth"],
 	    "build-commands": [
 		"python3 setup.py build",
 		"python3 setup.py install --prefix=/app"
