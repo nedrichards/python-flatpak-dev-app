@@ -1,5 +1,5 @@
 # python-flatpak-dev-app
-Command line flatpak that gives the user access to python dev tools. This is likely solely of use to people who use Linux computers with minimal read only root filesystems and run all applications inside flatpak containers, such as users of (https://endlessos.com/)[Endless OS].
+Command line flatpak that gives the user access to python dev tools. This is likely solely of use to people who use Linux computers with minimal read only root filesystems and run all applications inside flatpak containers, such as users of [Endless OS](https://endlessos.com/).
 
 Instructions:
 -------------
