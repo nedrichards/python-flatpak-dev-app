@@ -1,9 +1,0 @@
-all:
-	python3 setup.py build
-
-install:
-	mkdir -p /app/lib/python3.5/site-packages/
-	python3 setup.py install --prefix=/app
-	find /app
-	echo
-	echo
